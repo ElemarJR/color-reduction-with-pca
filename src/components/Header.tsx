@@ -8,6 +8,7 @@ import {
   faInstagram,
   faYoutube,
   faXTwitter,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import { ExternalLink } from "lucide-react";
 
@@ -121,6 +122,17 @@ export function Header() {
             </div>
 
             <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/ElemarJR/color-reduction-with-pca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#EF6823] hover:text-[#d55a1d] transition-colors"
+                title="GitHub"
+              >
+                <div className="w-[36px] h-[36px] flex items-center justify-center">
+                  <FontAwesomeIcon icon={faGithub} className="w-[18px] h-[18px]" />
+                </div>
+              </a>
               <a
                 href="https://elemarjr.com/trabalhe-comigo/"
                 target="_blank"
