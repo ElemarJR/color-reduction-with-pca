@@ -12,7 +12,7 @@ RUN yarn build
 
 FROM nginx:1.27-alpine
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html/color-reduction-with-pca/
 
 EXPOSE 80
 
