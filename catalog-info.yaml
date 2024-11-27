@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: color-reduction-with-pca
+  description: Color reduction with PCA
+spec:
+  type: website
+  lifecycle: experimental
+  owner: elemarjr
+  system: code-samples
+  tags:
+    - react
+    - tailwind
+    - vite
