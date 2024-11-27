@@ -25,7 +25,7 @@ export function Header() {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/images/logo-elemar-jr.png"
+                  src="images/logo-elemar-jr.png"
                   alt="Elemar JR Logo"
                   width={130}
                 />
