@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Build the Docker image
-      run: docker build . --tag 339713015367.dkr.ecr.us-east-1.amazonaws.com/code-samples/color-reduction-with-pca:${{ github.run_id }} --tag 339713015367.dkr.ecr.us-east-1.amazonaws.com/code-samples/color-reduction-with-pca:latest
+      run: docker build . --tag 339713015367.dkr.ecr.us-east-1.amazonaws.com/labs/color-reduction-with-pca:${{ github.run_id }} --tag 339713015367.dkr.ecr.us-east-1.amazonaws.com/labs/color-reduction-with-pca:latest
 
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v3
@@ -31,8 +31,8 @@ jobs:
 
     - name: Push Docker images
       run: |
-        docker image push 339713015367.dkr.ecr.us-east-1.amazonaws.com/code-samples/color-reduction-with-pca:${{ github.run_id }}
-        docker image push 339713015367.dkr.ecr.us-east-1.amazonaws.com/code-samples/color-reduction-with-pca:latest
+        docker image push 339713015367.dkr.ecr.us-east-1.amazonaws.com/labs/color-reduction-with-pca:${{ github.run_id }}
+        docker image push 339713015367.dkr.ecr.us-east-1.amazonaws.com/labs/color-reduction-with-pca:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,5 +49,5 @@ jobs:
     - name: Deploy Backend
       run: |
         aws eks update-kubeconfig --name ia-factory-cluster --region us-east-1        
-        helm upgrade --install color-reduction-with-pca ./deploy/chart/color-reduction-with-pca --namespace code-samples --set image.repository=339713015367.dkr.ecr.us-east-1.amazonaws.com/code-samples/color-reduction-with-pca --set image.tag=${{ github.run_id }} --wait --create-namespace
+        helm upgrade --install color-reduction-with-pca ./deploy/chart/color-reduction-with-pca --namespace labs --set image.repository=339713015367.dkr.ecr.us-east-1.amazonaws.com/labs/color-reduction-with-pca --set image.tag=${{ github.run_id }} --wait --create-namespace
           

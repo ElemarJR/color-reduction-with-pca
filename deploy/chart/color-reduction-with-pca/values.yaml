@@ -18,14 +18,14 @@ ingress:
   annotations:  
     cert-manager.io/issuer: "letsencrypt"
   hosts:
-    - host: code-samples.elemarjr.com
+    - host: labs.elemarjr.com
       paths:
         - path: /color-reduction-with-pca
           pathType: Prefix
   tls:
    - secretName: color-reduction-with-pca-tls
      hosts:
-       - code-samples.elemarjr.com
+       - labs.elemarjr.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

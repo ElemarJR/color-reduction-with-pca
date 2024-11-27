@@ -7,7 +7,7 @@ spec:
   type: website
   lifecycle: experimental
   owner: elemarjr
-  system: code-samples
+  system: labs
   tags:
     - react
     - tailwind
